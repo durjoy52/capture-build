@@ -1,6 +1,8 @@
+import { motion } from 'framer-motion';
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { pageAnimation } from "../animation";
 import { MovieState } from "../movieState";
 const MovieDetail = () => {
   const location = useLocation();
@@ -15,7 +17,7 @@ const MovieDetail = () => {
   return (
     <>
       {movies && (
-        <Details>
+        <Details exit="exit" variants={pageAnimation} initial="hidden" animate="show">
           <HeadLine>
             <h2>{movie?.title}</h2>
             <img src={movie?.mainImg} alt="" />
@@ -44,7 +46,7 @@ const Award = ({title,description}) =>{
     )
 }
 
-const Details = styled.div`
+const Details = styled(motion.div)`
   color: white;
 `;
 const HeadLine = styled.div`
