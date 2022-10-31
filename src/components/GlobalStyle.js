@@ -18,6 +18,7 @@ body{
     overflow-x:hidden;
 }
 button{
+    z-index: 2;
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;

@@ -30,6 +30,12 @@ export const Description = styled.div`
           margin: 2rem 0rem 4rem 0rem;
         }
       }
+      
+    @media(max-width:468px){
+        h2{
+          font-size: 3rem;
+        }
+      }
 `;
 export const Image = styled.div`
   z-index: 2;
