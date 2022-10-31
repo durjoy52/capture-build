@@ -76,16 +76,14 @@ export const sliderContainer = {
 export const scrollReveal = {
     hidden:{
         opacity: 0,
-        scale: 1.2,
-        transition: {
-            duration:0.5
-        }
+        scale:.9
     },
     show:{
         opacity: 1,
         scale:1,
         transition:{
-            duration:0.5
+            duration:0.5,
+            ease:"easeOut"
         }
     }
 }

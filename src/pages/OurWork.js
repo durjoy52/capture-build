@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { fade, lineAnim, pageAnimation, photoAnim, slider, sliderContainer } from "../animation";
+import ScrollTop from "../components/ScrollTop";
 import { useScroll } from "../components/useScroll";
 import athlete from "../img/athlete-small.png";
 import goodtimes from "../img/goodtimes-small.png";
@@ -13,7 +14,7 @@ const OurWork = () => {
   const [element,controls] = useScroll()
   const [element2,controls2] = useScroll()
   return (
-    <Work exit="exit" variants={pageAnimation} initial="hidden" animate="show">
+    <Work style={{background:'#fff'}} exit="exit" variants={pageAnimation} initial="hidden" animate="show">
       <motion.div variants={sliderContainer}>
       <Frame1 variants={slider}/>
       <Frame2 variants={slider}/>
@@ -43,6 +44,7 @@ const OurWork = () => {
           <img src={goodtimes} alt="good-times" />
         </Link>
       </Movie>
+      <ScrollTop/>
     </Work>
   );
 };
@@ -51,7 +53,9 @@ const Work = styled(motion.div)`
   min-height: 100vh;
   padding: 5rem 10rem;
   overflow: hidden;
-  background: #fff;
+ @media(max-width:1300px){
+  padding: 2rem 2rem;
+ }
   h2 {
     padding: 1rem 0rem;
   }

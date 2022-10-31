@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { pageAnimation } from "../animation";
+import ScrollTop from '../components/ScrollTop';
 import { MovieState } from "../movieState";
 const MovieDetail = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ const MovieDetail = () => {
           <ImageDisplay>
             <img src={movie?.secondaryImg} alt="movie" />
           </ImageDisplay>
+          <ScrollTop/>
         </Details>
       )}
     </>
@@ -59,6 +61,16 @@ const HeadLine = styled.div`
     left: 50%;
     transform: translate(-50%, -10%);
   }
+  @media (max-width:1300px){
+   h2{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 100%;
+   }
+}
   img {
     width: 100%;
     height: 70vh;
@@ -72,6 +84,10 @@ display: flex;
 margin: 5rem 10rem;
 justify-content: space-around;
 align-items: center;
+@media (max-width:1300px){
+    flex-direction: column;
+    margin: 2rem;
+}
 `;
 const AwardStyle = styled.div`
 padding: 5rem;
@@ -96,6 +112,13 @@ img{
     height: 100vh;
     object-fit: cover;
 }
+
+@media(max-width:1300px){
+    img{
+      object-fit: contain;
+      height: 100%;
+    }    
+      }
 `
 
 export default MovieDetail;

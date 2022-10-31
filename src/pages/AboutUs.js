@@ -3,6 +3,7 @@ import React from 'react';
 import { pageAnimation } from '../animation';
 import AboutSection from '../components/AboutSection';
 import FaqSection from '../components/FaqSection';
+import ScrollTop from '../components/ScrollTop';
 import ServicesSection from '../components/ServicesSection';
 
 const AboutUs = () => {
@@ -11,6 +12,7 @@ const AboutUs = () => {
             <AboutSection/>
             <ServicesSection/>
             <FaqSection/>
+            <ScrollTop/>
         </motion.div>
     );
 };
